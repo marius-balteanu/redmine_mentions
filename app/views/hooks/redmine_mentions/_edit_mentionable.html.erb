@@ -1,5 +1,4 @@
 <%= javascript_include_tag 'jquery.textcomplete.js', :plugin => 'redmine_mentions' %>
-<%= javascript_include_tag 'jquery.overlay.js', :plugin => 'redmine_mentions' %>
 <%= stylesheet_link_tag 'auto_complete.css', :plugin => 'redmine_mentions' %>
 <% regex_find = '/\B'+Setting.plugin_redmine_mentions['trigger']+'(\w*)$/i'%>
 
@@ -27,12 +26,5 @@
         return '<%=Setting.plugin_redmine_mentions['trigger']%>' + name + ' ';
       }
     }
-  ]).overlay([
-    {
-      match: new RegExp(<%=regex_highlight%>),
-      css: {
-        'background-color': '#C6D5F3',
-      }
-    }
-  ]);
+  ])
 </script>
