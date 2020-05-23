@@ -2,6 +2,7 @@ require 'redmine'
 
 Rails.configuration.to_prepare do
   require_dependency 'redmine_mentions/hooks'
+  require_dependency 'redmine_mentions/mailer_patch'
   require_dependency 'journal'
   Journal.send(:include, RedmineMentions::JournalPatch)
 end
